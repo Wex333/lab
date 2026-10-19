@@ -1,0 +1,10 @@
+build/
+build-*/
+out/
+dist/
+*.db
+*.tgz
+*.tar.gz
+.idea/
+.vscode/
+README.md

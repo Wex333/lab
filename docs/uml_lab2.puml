@@ -1,0 +1,18 @@
+@startuml TaskFlow_Kudryashov_Lab2
+interface ITaskRepository
+interface IPriorityStrategy
+class TaskService
+class InMemoryTaskRepository
+class SQLiteTaskRepository
+class LabelPriorityStrategy
+class NoticeBoard
+class make_repository <<factory>>
+TaskService --> ITaskRepository
+TaskService --> IPriorityStrategy
+TaskService ..> NoticeBoard : Observer
+InMemoryTaskRepository ..|> ITaskRepository
+SQLiteTaskRepository ..|> ITaskRepository
+LabelPriorityStrategy ..|> IPriorityStrategy
+make_repository ..> InMemoryTaskRepository
+make_repository ..> SQLiteTaskRepository
+@enduml
